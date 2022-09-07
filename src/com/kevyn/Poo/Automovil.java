@@ -4,19 +4,22 @@ public class Automovil {
 
 	private String fabricante;
 	private String modelo;
-	private String color;
+	private Color color = Color.GRIS;
 	private double cilindrada;
 	private int capacidadTanque;
+	private static Color colorPatente = Color.NARANJO;
+	private TipoAutomovil tipo;
 	
 	public Automovil() {
 
 	}
-	
-	public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadTanque) {
+
+	public Automovil(String fabricante, String modelo, Color color, TipoAutomovil tipo, double cilindrada, int capacidadTanque) {
 		super();
 		this.fabricante = fabricante;
 		this.modelo = modelo;
 		this.color = color;
+		this.tipo = tipo;
 		this.cilindrada = cilindrada;
 		this.capacidadTanque = capacidadTanque;
 	}
@@ -37,11 +40,11 @@ public class Automovil {
 		this.modelo = modelo;
 	}
 
-	public String getColor() {
+	public Color getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
+	public void setColor(Color color) {
 		this.color = color;
 	}
 
@@ -61,12 +64,37 @@ public class Automovil {
 		this.capacidadTanque = capacidadTanque;
 	}
 	
-	
+	public static Color getColorPatente() {
+		return colorPatente;
+	}
+
+	public static void setColorPatente(Color colorPatente) {
+		Automovil.colorPatente = colorPatente;
+	}
+
+	public TipoAutomovil getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoAutomovil tipo) {
+		this.tipo = tipo;
+	}
+
+	@Override
+	public String toString() {
+		return "Automovil [fabricante=" + fabricante + ", modelo=" + modelo + ", color=" + color + ", cilindrada="
+				+ cilindrada + ", capacidadTanque=" + capacidadTanque + ", tipo=" + tipo + "]";
+	}
+
 	public String imprimirInformacion() {
 		String imprimir = "Fabricante = " + this.fabricante;
 		imprimir += "\nModelo = " + this.modelo;
-		imprimir += "\nColor = " + this.color;
+		imprimir += "\nColor = " + this.color.getColor();
+		imprimir += "\nTipo = " + this.getTipo().getNombre();
+		imprimir += "\nNumero de puertas = " + this.getTipo().getNumeroPuertas();
+		imprimir += "\nDescripcion = " + this.getTipo().getDescripcion();
 		imprimir += "\nCilindrada = " + this.cilindrada;
+		imprimir += "\nColor patente = " + Automovil.colorPatente;
 		
 		return imprimir;
 	}
