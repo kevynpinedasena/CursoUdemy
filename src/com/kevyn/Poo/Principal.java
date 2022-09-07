@@ -36,6 +36,46 @@ public class Principal {
 		
 		//con el toString se impreme somo el objeto
 		System.out.println("\n"+mazda);
+		
+		
+		System.out.println("\nTipo Subaru\n");
+		TipoAutomovil tipoMazda = mazda.getTipo();
+		System.out.println("tipo mazda: " + tipoMazda.getNombre() + 
+				"\nTipo descripcion mazda: " + tipoMazda.getDescripcion());
+		
+		switch (tipoMazda) {
+			case CONVERTIBLE:
+				System.out.println("El auto es deportivo y descapotable de dos puertas");
+				break;
+				
+			case COUPE:
+				System.out.println("Es un auto pequeño de dos puertas y tipicamente deportivo"); 
+				break;
+				
+			case FURGON:
+				System.out.println("Es un automovil utilitario de transporte, de empresa");
+				break;
+				
+			case HATCHBACK:
+				System.out.println("Es un automovil mediano compacto, aspecto deportivo");
+				break;
+				
+			case PICKUP:
+				System.out.println("Es un automovil de doble cabina o camioneta");
+				break;
+				
+			case SEDAN:
+				System.out.println("es un automovil mediano");
+				break;
+				
+			case STATION_WAGON:
+				System.out.println("Es un automovil mas grande con maleta grande....");
+				break;
+
+			default:
+				break;
+		}
+		
 	}
 
 }
